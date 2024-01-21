@@ -32,6 +32,9 @@ import {
   WRAPPED_NATIVE_CURRENCY,
   USDC_BASE,
   USDC_BASE_GOERLI,
+  USDC_L3,
+  USDT_L3,
+  DAI_L3,
 } from '@myunidavid/smartorderrouter'
 import { ethers } from 'ethers'
 import NodeCache from 'node-cache'
@@ -84,6 +87,8 @@ export const DAI_ON = (chainId: ChainId): Token => {
       return DAI_BNB
     case ChainId.AVALANCHE:
       return DAI_AVAX
+    case ChainId.L3:
+      return DAI_L3
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }
@@ -101,6 +106,8 @@ export const USDT_ON = (chainId: ChainId): Token => {
       return USDT_ARBITRUM
     case ChainId.BNB:
       return USDT_BNB
+    case ChainId.L3:
+      return USDT_L3
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }
@@ -132,6 +139,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BASE
     case ChainId.BASE_GOERLI:
       return USDC_BASE_GOERLI
+    case ChainId.L3:
+      return USDC_L3
     default:
       throw new Error(`Chain id: ${chainId} not supported`)
   }
